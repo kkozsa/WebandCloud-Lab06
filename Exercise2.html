@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <script type="text/javascript">
+
+            var startProgram = function()
+            {
+                var htmlOutput = "";
+
+                // Appending a paragraph at the end of the main document body
+                var paragraph2 = document.createElement('p');
+                paragraph2.setAttribute("id", "paragraph2");
+                document.body.appendChild(paragraph2);
+                htmlOutput = "This is paragraph2 content";
+                paragraph2.innerHTML = htmlOutput;
+
+                // Appending a list at the end of the main document body
+                var list = document.createElement('ul');
+                list.setAttribute("id", "list1");
+                document.body.appendChild(list);
+                htmlOutput = "";
+                htmlOutput +=  "<li>list item 1<li>";
+                htmlOutput +=  "<li>list item 2<li>";
+                htmlOutput +=  "<li>list item 3<li>";
+                list.innerHTML = htmlOutput;
+            }
+
+        </script>
+    </head>
+
+        <body onload="startProgram();">
+        
+            Java script tutorial<br>
+            <p id="paragraph1">
+                This is paragraph 1 content
+            </p>
+            
+        </body>
+
+    
+
+</html>

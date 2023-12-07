@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <style type="text/css">
+
+            table_border {border: 1px solid black;}
+
+        </style>
+
+        <script type="text/javascript">
+
+            var startProgram = function()
+            {
+
+                var htmlOutput = "";
+
+                var amount;     // Current amount of money
+                var principal = 1000.00;    // Principal amount
+                var rate = 0.05;    // Interest rate
+
+                htmlOutput += "Calculating compound interest<br>";
+                htmlOutput += "<table style='width: 300px; border: 1px solid black;'>";
+                htmlOutput += "<tr>";
+                htmlOutput += "<td Style='border: 1px solid black; color: white; background-color: darkblue;'>Year</td>";
+                htmlOutput += "<td Style='border: 1px solid black; color: white; background-color: darkblue;'>Amount on deposit</td>";
+                htmlOutput += "</tr>";
+
+                for (var year=1; year<=10; year++)
+                {
+                    amount = principal * Math.pow(1.0 + rate, year);
+
+                    if (year%2 !==0)
+                    {
+                        htmlOutput += "<tr>";
+                        htmlOutput += "<td Style='border: 1px solid black; background-color: white'>" + year + "</td>";
+                        htmlOutput += "<td Style='border: 1px solid black; background-color: white'>" + amount.toFixed(2) + "</td>";
+                        htmlOutput += "</tr>";
+                    }
+                    else
+                    {
+                        htmlOutput += "<tr>";
+                        htmlOutput += "<td Style='border: 1px solid black; background-color: lightblue'>" + year + "</td>";
+                        htmlOutput += "<td Style='border: 1px solid black; background-color: lightblue'>" + amount.toFixed(2) + "</td>";
+                        htmlOutput += "</tr>";
+                    }
+                }
+
+                htmlOutput += "</table>";
+
+                // Show output
+                document.getElementById("paragraph1").innerHTML = htmlOutput;
+
+
+            }
+
+        </script>
+
+    </head>
+
+    <body onload="startProgram();">
+        
+        Java script tutorial<br>
+        <p id="paragraph1">
+            This is paragraph 1 content
+        </p>
+        
+    </body>
+
+</html>
